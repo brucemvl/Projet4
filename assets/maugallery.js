@@ -217,15 +217,38 @@
                     </div>
                 </div>
             </div>`);
-    },
+            function prev(){
+              const imgs = document.querySelector(".gallery-item")
+              const prev = document.querySelector(".mg-prev")
+              for(let i=0; i< prev.length; i++){
+              
+              prev.addEventListener("click", ()=>{
+console.log("jai clic")         
+     })}
+            }
+            prev()
+           
+    }
+    ,
+
+    
     showItemTags(gallery, position, tags) {
       var tagItems =
         '<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all">Tous</span></li>';
       $.each(tags, function(index, value) {
         tagItems += `<li class="nav-item active">
                 <span class="nav-link"  data-images-toggle="${value}">${value}</span></li>`;
-      });
+      
+      })
+      ;
+      console.log(tags)
+      
+      
+      
+      
       var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
+      console.log(tags)
+      
 
       if (position === "bottom") {
         gallery.append(tagsRow);
@@ -234,13 +257,19 @@
       } else {
         console.error(`Unknown tags position: ${position}`);
       }
+    
+
+      
     },
+
     filterByTag() {
       if ($(this).hasClass("active-tag")) {
-        return;
+        return console.log($(this))
+        ;
       }
       $(".active-tag").removeClass("active active-tag");
       $(this).addClass("active-tag");
+      
 
       var tag = $(this).data("images-toggle");
 
@@ -260,4 +289,8 @@
       });
     }
   };
-})(jQuery);
+
+ 
+})
+
+(jQuery);
