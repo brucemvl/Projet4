@@ -261,6 +261,7 @@ input[type="submit"] {
 	}
 	#about, #contact .container {
 		align-items: center;
+		padding: 150px;
 	}
 	.about-me__title {
 		margin-top: 0;
