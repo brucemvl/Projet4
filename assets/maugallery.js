@@ -154,7 +154,7 @@
         }
       });
       next =
-        imagesCollection[index] ||
+        imagesCollection[index-1] ||
         imagesCollection[imagesCollection.length - 1];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
@@ -192,7 +192,7 @@
           index = i;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
+      next = imagesCollection[index+1] || imagesCollection[0];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     createLightBox(gallery, lightboxId, navigation) {
@@ -217,18 +217,8 @@
                     </div>
                 </div>
             </div>`);
-            function prev(){
-              const imgs = document.querySelector(".gallery-item")
-              const prev = document.querySelector(".mg-prev")
-              for(let i=0; i< prev.length; i++){
-              
-              prev.addEventListener("click", ()=>{
-console.log("jai clic")         
-     })}
-            }
-            prev()
-           
     }
+            
     ,
 
     
